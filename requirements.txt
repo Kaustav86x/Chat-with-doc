@@ -1,0 +1,24 @@
+# Core LangChain + Vectorstore
+langchain
+langchain-community
+langchain-huggingface
+chromadb
+
+# Embeddings and Models
+transformers
+sentence-transformers
+torch
+accelerate
+huggingface-hub
+
+# FastAPI + Server
+fastapi
+uvicorn
+
+# Utilities
+python-dotenv
+
+# Optional but common for text/vector operations
+pypdf
+tiktoken
+numpy
