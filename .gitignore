@@ -1,5 +1,6 @@
 # .gitignore
 venv/
+testenv/
 __pycache__/
 *.pyc
 *.pyo
