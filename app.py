@@ -28,7 +28,7 @@ generator = pipeline(
     "text-generation",
     model="distilgpt2",
     max_new_tokens=150,
-    temperature=0.4,
+    temperature=0.8,
 )
 
 app = FastAPI(title="RAG API")
@@ -43,8 +43,9 @@ def root():
 @app.post("/query")
 def query_data(q: Query):
     query_text = q.question
-    results = db.similarity_search_with_relevance_scores(query_text, k=3)
-    if not results or results[0][1] < 0.45:
+    # results = db.similarity_search_with_relevance_scores(query_text, k=3)
+    results = db.similarity_search_with_score(query_text, k=3)
+    if not results or results[0][1] < 0.5:
         return {"response": "No good match found.", "sources": []}
 
     context_text = "\n\n---\n\n".join([doc.page_content for doc, _ in results])

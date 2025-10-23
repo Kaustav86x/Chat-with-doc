@@ -7,9 +7,15 @@ st.set_page_config(page_title="Document Query App", layout="centered")
 
 st.title("Chat with your Doc")
 
+st.text("")
+
 st.markdown("Ask something about your documents!")
 
-query = st.text_input("Enter your question about the documents:", placeholder="eg: Who is Alice?")
+st.write("")
+
+query = st.text_input("Enter your question about the documents:", placeholder="Don't ask hard questions !!!!!")
+
+st.text("")
 
 if st.button("Ask"):
     if query.strip() == "":
